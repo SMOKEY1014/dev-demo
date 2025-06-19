@@ -38,26 +38,27 @@
   <pre id="output"></pre>
 
   <script>
-    document.getElementById("testForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const url = document.getElementById("apiUrl").value;
-      const data = document.getElementById("dataInput").value;
-      const output = document.getElementById("output");
+  document.getElementById("testForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const baseUrl = document.getElementById("apiUrl").value.replace(/\/$/, ""); // remove trailing slash
+    const data = document.getElementById("dataInput").value;
+    const output = document.getElementById("output");
 
-      try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ data })
-        });
-        const json = await response.json();
-        output.textContent = JSON.stringify(json, null, 2);
-      } catch (err) {
-        output.textContent = "Error: " + err.message;
-      }
-    });
-  </script>
+    try {
+      const response = await fetch(baseUrl + "/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ data })
+      });
+      const json = await response.json();
+      output.textContent = JSON.stringify(json, null, 2);
+    } catch (err) {
+      output.textContent = "Error: " + err.message;
+    }
+  });
+</script>
+
 </body>
 </html>
