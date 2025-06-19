@@ -5,15 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Junior Dev API Tester</title>
   <style>
-  /* Glassmorphism container */
   body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    color: #fff;
+  }
+
+  h2, h3 {
+    margin: 10px 0;
+    font-weight: 600;
+  }
+
+  .container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
   }
 
   form#testForm {
@@ -26,13 +38,7 @@
     padding: 30px 40px;
     width: 350px;
     color: #fff;
-  }
-
-  h2, h3 {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 600;
+    box-sizing: border-box;
   }
 
   label {
@@ -54,6 +60,7 @@
     font-size: 1rem;
     box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
+    box-sizing: border-box;
   }
 
   input[type="url"]::placeholder,
@@ -89,15 +96,19 @@
   }
 
   pre#output {
-    margin-top: 20px;
     background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    padding: 15px;
-    color: #eee;
-    max-height: 150px;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    max-height: 260px;
     overflow-y: auto;
-    white-space: pre-wrap;
     font-family: Consolas, monospace;
+    box-sizing: border-box;
+    color: #eee;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
   }
 </style>
 </head>
